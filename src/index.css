@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark: #1e1e1e;
+  --neon-green: #00ff88;
+  --neon-orange: #ff8800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark);
+  color: white;
+}
+
+/* Custom utilities */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+.text-neon-green {
+  color: var(--neon-green);
+}
+
+.text-neon-orange {
+  color: var(--neon-orange);
+}
+
+.bg-neon-green {
+  background-color: var(--neon-green);
+}
+
+.bg-neon-orange {
+  background-color: var(--neon-orange);
+}
+
+.bg-dark {
+  background-color: var(--dark);
+}
+
+.border-neon-green {
+  border-color: var(--neon-green);
+}
+
+.border-neon-orange {
+  border-color: var(--neon-orange);
+}
+
+/* 3D Transform utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Gradient text */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.3);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-orange);
+}
+
+/* Theme variations */
+.light {
+  --dark: #ffffff;
+  --text-primary: #1e1e1e;
+}
+
+.light .bg-dark {
+  background-color: #ffffff;
+}
+
+.light .text-white {
+  color: #1e1e1e;
+}
+
+.light .bg-gray-800 {
+  background-color: #f8f9fa;
+  border-color: #e9ecef;
+}
+
+.light .bg-gray-900 {
+  background-color: #f1f3f4;
+}
+
+.light .text-gray-300 {
+  color: #6c757d;
+}
+
+.light .text-gray-400 {
+  color: #6c757d;
+}
+
+.light .border-gray-700 {
+  border-color: #dee2e6;
+}
+
+/* Responsive design enhancements */
+@media (max-width: 768px) {
+  .font-orbitron {
+    font-size: 0.9em;
+  }
+  
+  .perspective-1000 {
+    perspective: 500px;
+  }
+}
+
+/* Focus states for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
+/* Hover animations */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+  transition: box-shadow 0.3s ease;
+}
